@@ -119,6 +119,8 @@ tests
 CLAUDE.md
 .claude
 scripts
+!skills/**/scripts/
+!skills/**/scripts/**
 .code-review-state
 #openspec/
 code-reviews/
@@ -131,6 +133,7 @@ docs/*
 !docs/PAYMENT.md
 !docs/PAYMENT_CN.md
 !docs/ADMIN_PAYMENT_INTEGRATION_API.md
+!docs/QUOTADOCK_LOGO_BRIEF.md
 !docs/legal/
 !docs/legal/*.md
 .serena/
