@@ -1,6 +1,6 @@
 # Authentication Views
 
-This directory contains Vue 3 authentication views for the Sub2API frontend application.
+This directory contains Vue 3 authentication views for the QuotaDock frontend application.
 
 ## Components
 
@@ -166,7 +166,7 @@ Both views use:
 **Design System:**
 
 - TailwindCSS utility classes
-- Consistent color scheme (indigo primary)
+- Consistent color scheme (primary palette)
 - Responsive design
 - Accessible form controls
 - Loading states with spinner animations

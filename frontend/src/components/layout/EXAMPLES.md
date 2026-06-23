@@ -6,34 +6,34 @@
 <template>
   <AppLayout>
     <div class="space-y-6">
-      <h1 class="text-3xl font-bold text-gray-900">Dashboard</h1>
+      <h1 class="text-3xl font-bold text-accent-900">Dashboard</h1>
 
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
         <!-- Stats Cards -->
         <div class="rounded-lg bg-white p-6 shadow">
-          <div class="text-sm text-gray-600">API Keys</div>
-          <div class="text-2xl font-bold text-gray-900">5</div>
+          <div class="text-sm text-accent-600">API Keys</div>
+          <div class="text-2xl font-bold text-accent-900">5</div>
         </div>
 
         <div class="rounded-lg bg-white p-6 shadow">
-          <div class="text-sm text-gray-600">Total Usage</div>
-          <div class="text-2xl font-bold text-gray-900">1,234</div>
+          <div class="text-sm text-accent-600">Total Usage</div>
+          <div class="text-2xl font-bold text-accent-900">1,234</div>
         </div>
 
         <div class="rounded-lg bg-white p-6 shadow">
-          <div class="text-sm text-gray-600">Balance</div>
-          <div class="text-2xl font-bold text-indigo-600">${{ balance }}</div>
+          <div class="text-sm text-accent-600">Balance</div>
+          <div class="text-2xl font-bold text-primary-600">${{ balance }}</div>
         </div>
 
         <div class="rounded-lg bg-white p-6 shadow">
-          <div class="text-sm text-gray-600">Status</div>
+          <div class="text-sm text-accent-600">Status</div>
           <div class="text-2xl font-bold text-green-600">Active</div>
         </div>
       </div>
 
       <div class="rounded-lg bg-white p-6 shadow">
         <h2 class="mb-4 text-xl font-semibold">Recent Activity</h2>
-        <p class="text-gray-600">No recent activity</p>
+        <p class="text-accent-600">No recent activity</p>
       </div>
     </div>
   </AppLayout>
@@ -56,11 +56,11 @@ const balance = computed(() => authStore.user?.balance.toFixed(2) || '0.00')
 ```vue
 <template>
   <AuthLayout>
-    <h2 class="mb-6 text-2xl font-bold text-gray-900">Welcome Back</h2>
+    <h2 class="mb-6 text-2xl font-bold text-accent-900">Welcome Back</h2>
 
     <form @submit.prevent="handleSubmit" class="space-y-4">
       <div>
-        <label for="username" class="mb-1 block text-sm font-medium text-gray-700">
+        <label for="username" class="mb-1 block text-sm font-medium text-accent-700">
           Username
         </label>
         <input
@@ -68,13 +68,13 @@ const balance = computed(() => authStore.user?.balance.toFixed(2) || '0.00')
           v-model="form.username"
           type="text"
           required
-          class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-indigo-500"
+          class="w-full rounded-lg border border-accent-300 px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-primary-500"
           placeholder="Enter your username"
         />
       </div>
 
       <div>
-        <label for="password" class="mb-1 block text-sm font-medium text-gray-700">
+        <label for="password" class="mb-1 block text-sm font-medium text-accent-700">
           Password
         </label>
         <input
@@ -82,7 +82,7 @@ const balance = computed(() => authStore.user?.balance.toFixed(2) || '0.00')
           v-model="form.password"
           type="password"
           required
-          class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-indigo-500"
+          class="w-full rounded-lg border border-accent-300 px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-primary-500"
           placeholder="Enter your password"
         />
       </div>
@@ -90,16 +90,16 @@ const balance = computed(() => authStore.user?.balance.toFixed(2) || '0.00')
       <button
         type="submit"
         :disabled="loading"
-        class="w-full rounded-lg bg-indigo-600 px-4 py-2 text-white transition-colors hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
+        class="w-full rounded-lg bg-primary-600 px-4 py-2 text-white transition-colors hover:bg-primary-700 disabled:cursor-not-allowed disabled:opacity-50"
       >
         {{ loading ? 'Logging in...' : 'Login' }}
       </button>
     </form>
 
     <template #footer>
-      <p class="text-gray-600">
+      <p class="text-accent-600">
         Don't have an account?
-        <router-link to="/register" class="font-medium text-indigo-600 hover:underline">
+        <router-link to="/register" class="font-medium text-primary-600 hover:underline">
           Sign up
         </router-link>
       </p>
@@ -149,10 +149,10 @@ async function handleSubmit() {
     <div class="space-y-6">
       <!-- Custom page header -->
       <div class="flex items-center justify-between">
-        <h1 class="text-3xl font-bold text-gray-900">API Keys</h1>
+        <h1 class="text-3xl font-bold text-accent-900">API Keys</h1>
         <button
           @click="showCreateModal = true"
-          class="rounded-lg bg-indigo-600 px-4 py-2 text-white transition-colors hover:bg-indigo-700"
+          class="rounded-lg bg-primary-600 px-4 py-2 text-white transition-colors hover:bg-primary-700"
         >
           Create New Key
         </button>
@@ -160,23 +160,23 @@ async function handleSubmit() {
 
       <!-- API Keys List -->
       <div class="overflow-hidden rounded-lg bg-white shadow">
-        <table class="min-w-full divide-y divide-gray-200">
-          <thead class="bg-gray-50">
+        <table class="min-w-full divide-y divide-accent-200">
+          <thead class="bg-accent-50">
             <tr>
-              <th class="px-6 py-3 text-left text-xs font-medium uppercase text-gray-500">Name</th>
-              <th class="px-6 py-3 text-left text-xs font-medium uppercase text-gray-500">Key</th>
-              <th class="px-6 py-3 text-left text-xs font-medium uppercase text-gray-500">
+              <th class="px-6 py-3 text-left text-xs font-medium uppercase text-accent-500">Name</th>
+              <th class="px-6 py-3 text-left text-xs font-medium uppercase text-accent-500">Key</th>
+              <th class="px-6 py-3 text-left text-xs font-medium uppercase text-accent-500">
                 Status
               </th>
-              <th class="px-6 py-3 text-left text-xs font-medium uppercase text-gray-500">
+              <th class="px-6 py-3 text-left text-xs font-medium uppercase text-accent-500">
                 Created
               </th>
-              <th class="px-6 py-3 text-right text-xs font-medium uppercase text-gray-500">
+              <th class="px-6 py-3 text-right text-xs font-medium uppercase text-accent-500">
                 Actions
               </th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-gray-200 bg-white">
+          <tbody class="divide-y divide-accent-200 bg-white">
             <tr v-for="key in apiKeys" :key="key.id">
               <td class="whitespace-nowrap px-6 py-4">{{ key.name }}</td>
               <td class="px-6 py-4 font-mono text-sm">{{ key.key }}</td>
@@ -192,7 +192,7 @@ async function handleSubmit() {
                   {{ key.status }}
                 </span>
               </td>
-              <td class="px-6 py-4 text-sm text-gray-500">
+              <td class="px-6 py-4 text-sm text-accent-500">
                 {{ new Date(key.created_at).toLocaleDateString() }}
               </td>
               <td class="px-6 py-4 text-right">
@@ -228,10 +228,10 @@ const apiKeys = ref<ApiKey[]>([])
   <AppLayout>
     <div class="space-y-6">
       <div class="flex items-center justify-between">
-        <h1 class="text-3xl font-bold text-gray-900">User Management</h1>
+        <h1 class="text-3xl font-bold text-accent-900">User Management</h1>
         <button
           @click="showCreateUser = true"
-          class="rounded-lg bg-indigo-600 px-4 py-2 text-white transition-colors hover:bg-indigo-700"
+          class="rounded-lg bg-primary-600 px-4 py-2 text-white transition-colors hover:bg-primary-700"
         >
           Create User
         </button>
@@ -247,24 +247,24 @@ const apiKeys = ref<ApiKey[]>([])
               class="flex items-center justify-between border-b pb-4"
             >
               <div>
-                <div class="font-medium text-gray-900">{{ user.username }}</div>
-                <div class="text-sm text-gray-500">{{ user.email }}</div>
+                <div class="font-medium text-accent-900">{{ user.username }}</div>
+                <div class="text-sm text-accent-500">{{ user.email }}</div>
               </div>
               <div class="flex items-center space-x-4">
                 <span
                   class="rounded-full px-2 py-1 text-xs"
                   :class="
                     user.role === 'admin'
-                      ? 'bg-purple-100 text-purple-800'
-                      : 'bg-blue-100 text-blue-800'
+                      ? 'bg-accent-100 text-accent-800'
+                      : 'bg-primary-100 text-primary-800'
                   "
                 >
                   {{ user.role }}
                 </span>
-                <span class="text-sm font-medium text-gray-700">
+                <span class="text-sm font-medium text-accent-700">
                   ${{ user.balance.toFixed(2) }}
                 </span>
-                <button class="text-sm text-indigo-600 hover:text-indigo-800">Edit</button>
+                <button class="text-sm text-primary-600 hover:text-primary-800">Edit</button>
               </div>
             </div>
           </div>
@@ -295,36 +295,36 @@ const users = ref<User[]>([])
 <template>
   <AppLayout>
     <div class="max-w-2xl space-y-6">
-      <h1 class="text-3xl font-bold text-gray-900">Profile Settings</h1>
+      <h1 class="text-3xl font-bold text-accent-900">Profile Settings</h1>
 
       <!-- User Info Card -->
       <div class="space-y-4 rounded-lg bg-white p-6 shadow">
-        <h2 class="text-xl font-semibold text-gray-900">Account Information</h2>
+        <h2 class="text-xl font-semibold text-accent-900">Account Information</h2>
 
         <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
-            <label class="mb-1 block text-sm font-medium text-gray-700"> Username </label>
-            <div class="rounded-lg bg-gray-50 px-3 py-2 text-gray-900">
+            <label class="mb-1 block text-sm font-medium text-accent-700"> Username </label>
+            <div class="rounded-lg bg-accent-50 px-3 py-2 text-accent-900">
               {{ user?.username }}
             </div>
           </div>
 
           <div>
-            <label class="mb-1 block text-sm font-medium text-gray-700"> Email </label>
-            <div class="rounded-lg bg-gray-50 px-3 py-2 text-gray-900">
+            <label class="mb-1 block text-sm font-medium text-accent-700"> Email </label>
+            <div class="rounded-lg bg-accent-50 px-3 py-2 text-accent-900">
               {{ user?.email }}
             </div>
           </div>
 
           <div>
-            <label class="mb-1 block text-sm font-medium text-gray-700"> Role </label>
-            <div class="rounded-lg bg-gray-50 px-3 py-2">
+            <label class="mb-1 block text-sm font-medium text-accent-700"> Role </label>
+            <div class="rounded-lg bg-accent-50 px-3 py-2">
               <span
                 class="rounded-full px-2 py-1 text-xs"
                 :class="
                   user?.role === 'admin'
-                    ? 'bg-purple-100 text-purple-800'
-                    : 'bg-blue-100 text-blue-800'
+                    ? 'bg-accent-100 text-accent-800'
+                    : 'bg-primary-100 text-primary-800'
                 "
               >
                 {{ user?.role }}
@@ -333,8 +333,8 @@ const users = ref<User[]>([])
           </div>
 
           <div>
-            <label class="mb-1 block text-sm font-medium text-gray-700"> Balance </label>
-            <div class="rounded-lg bg-gray-50 px-3 py-2 font-semibold text-indigo-600">
+            <label class="mb-1 block text-sm font-medium text-accent-700"> Balance </label>
+            <div class="rounded-lg bg-accent-50 px-3 py-2 font-semibold text-primary-600">
               ${{ user?.balance.toFixed(2) }}
             </div>
           </div>
@@ -343,11 +343,11 @@ const users = ref<User[]>([])
 
       <!-- Change Password Card -->
       <div class="space-y-4 rounded-lg bg-white p-6 shadow">
-        <h2 class="text-xl font-semibold text-gray-900">Change Password</h2>
+        <h2 class="text-xl font-semibold text-accent-900">Change Password</h2>
 
         <form @submit.prevent="handleChangePassword" class="space-y-4">
           <div>
-            <label for="old-password" class="mb-1 block text-sm font-medium text-gray-700">
+            <label for="old-password" class="mb-1 block text-sm font-medium text-accent-700">
               Current Password
             </label>
             <input
@@ -355,12 +355,12 @@ const users = ref<User[]>([])
               v-model="passwordForm.old_password"
               type="password"
               required
-              class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-indigo-500"
+              class="w-full rounded-lg border border-accent-300 px-3 py-2 focus:ring-2 focus:ring-primary-500"
             />
           </div>
 
           <div>
-            <label for="new-password" class="mb-1 block text-sm font-medium text-gray-700">
+            <label for="new-password" class="mb-1 block text-sm font-medium text-accent-700">
               New Password
             </label>
             <input
@@ -368,13 +368,13 @@ const users = ref<User[]>([])
               v-model="passwordForm.new_password"
               type="password"
               required
-              class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-indigo-500"
+              class="w-full rounded-lg border border-accent-300 px-3 py-2 focus:ring-2 focus:ring-primary-500"
             />
           </div>
 
           <button
             type="submit"
-            class="rounded-lg bg-indigo-600 px-4 py-2 text-white transition-colors hover:bg-indigo-700"
+            class="rounded-lg bg-primary-600 px-4 py-2 text-white transition-colors hover:bg-primary-700"
           >
             Update Password
           </button>

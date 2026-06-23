@@ -29,7 +29,7 @@
               </label>
               <div class="relative mt-1">
                 <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
-                  <Icon name="gift" size="md" class="text-gray-400 dark:text-dark-500" />
+                  <Icon name="gift" size="md" class="text-accent-400 dark:text-dark-500" />
                 </div>
                 <input
                   id="code"
@@ -200,8 +200,8 @@
 
       <!-- Recent Activity -->
       <div class="card">
-        <div class="border-b border-gray-100 px-6 py-4 dark:border-dark-700">
-          <h2 class="text-lg font-semibold text-gray-900 dark:text-white">
+        <div class="border-b border-accent-100 px-6 py-4 dark:border-dark-700">
+          <h2 class="text-lg font-semibold text-accent-900 dark:text-white">
             {{ t('redeem.recentActivity') }}
           </h2>
         </div>
@@ -230,7 +230,7 @@
             <div
               v-for="item in history"
               :key="item.id"
-              class="flex items-center justify-between rounded-xl bg-gray-50 p-4 dark:bg-dark-800"
+              class="flex items-center justify-between rounded-xl bg-accent-50 p-4 dark:bg-dark-800"
             >
               <div class="flex items-center gap-4">
                 <div
@@ -241,9 +241,9 @@
                         ? 'bg-emerald-100 dark:bg-emerald-900/30'
                         : 'bg-red-100 dark:bg-red-900/30'
                       : isSubscriptionType(item.type)
-                        ? 'bg-purple-100 dark:bg-purple-900/30'
+                        ? 'bg-accent-100 dark:bg-accent-900/30'
                         : item.value >= 0
-                          ? 'bg-blue-100 dark:bg-blue-900/30'
+                          ? 'bg-primary-100 dark:bg-primary-900/30'
                           : 'bg-orange-100 dark:bg-orange-900/30'
                   ]"
                 >
@@ -263,7 +263,7 @@
                     v-else-if="isSubscriptionType(item.type)"
                     name="badge"
                     size="md"
-                    class="text-purple-600 dark:text-purple-400"
+                    class="text-accent-600 dark:text-accent-400"
                   />
                   <!-- 并发类型图标 -->
                   <Icon
@@ -272,16 +272,16 @@
                     size="md"
                     :class="
                       item.value >= 0
-                        ? 'text-blue-600 dark:text-blue-400'
+                        ? 'text-primary-600 dark:text-primary-400'
                         : 'text-orange-600 dark:text-orange-400'
                     "
                   />
                 </div>
                 <div>
-                  <p class="text-sm font-medium text-gray-900 dark:text-white">
+                  <p class="text-sm font-medium text-accent-900 dark:text-white">
                     {{ getHistoryItemTitle(item) }}
                   </p>
-                  <p class="text-xs text-gray-500 dark:text-dark-400">
+                  <p class="text-xs text-accent-500 dark:text-dark-400">
                     {{ formatDateTime(item.used_at) }}
                   </p>
                 </div>
@@ -295,9 +295,9 @@
                         ? 'text-emerald-600 dark:text-emerald-400'
                         : 'text-red-600 dark:text-red-400'
                       : isSubscriptionType(item.type)
-                        ? 'text-purple-600 dark:text-purple-400'
+                        ? 'text-accent-600 dark:text-accent-400'
                         : item.value >= 0
-                          ? 'text-blue-600 dark:text-blue-400'
+                          ? 'text-primary-600 dark:text-primary-400'
                           : 'text-orange-600 dark:text-orange-400'
                   ]"
                 >
@@ -305,17 +305,17 @@
                 </p>
                 <p
                   v-if="!isAdminAdjustment(item.type)"
-                  class="font-mono text-xs text-gray-400 dark:text-dark-500"
+                  class="font-mono text-xs text-accent-400 dark:text-dark-500"
                 >
                   {{ item.code.slice(0, 8) }}...
                 </p>
-                <p v-else class="text-xs text-gray-400 dark:text-dark-500">
+                <p v-else class="text-xs text-accent-400 dark:text-dark-500">
                   {{ t('redeem.adminAdjustment') }}
                 </p>
                 <!-- Display notes for admin adjustments -->
                 <p
                   v-if="item.notes"
-                  class="mt-1 text-xs text-gray-500 dark:text-dark-400 italic max-w-[200px] truncate"
+                  class="mt-1 text-xs text-accent-500 dark:text-dark-400 italic max-w-[200px] truncate"
                   :title="item.notes"
                 >
                   {{ item.notes }}
@@ -327,11 +327,11 @@
           <!-- Empty State -->
           <div v-else class="empty-state py-8">
             <div
-              class="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gray-100 dark:bg-dark-800"
+              class="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-accent-100 dark:bg-dark-800"
             >
-              <Icon name="clock" size="xl" class="text-gray-400 dark:text-dark-500" />
+              <Icon name="clock" size="xl" class="text-accent-400 dark:text-dark-500" />
             </div>
-            <p class="text-sm text-gray-500 dark:text-dark-400">
+            <p class="text-sm text-accent-500 dark:text-dark-400">
               {{ t('redeem.historyWillAppear') }}
             </p>
           </div>

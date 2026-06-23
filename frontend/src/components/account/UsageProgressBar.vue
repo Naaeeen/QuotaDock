@@ -5,19 +5,19 @@
       v-if="windowStats && (windowStats.requests > 0 || windowStats.tokens > 0)"
       class="mb-0.5 flex items-center"
     >
-      <div class="flex items-center gap-1.5 text-[9px] text-gray-500 dark:text-gray-400">
-        <span class="rounded bg-gray-100 px-1.5 py-0.5 dark:bg-gray-800">
+      <div class="flex items-center gap-1.5 text-[9px] text-accent-500 dark:text-accent-400">
+        <span class="rounded bg-accent-100 px-1.5 py-0.5 dark:bg-accent-800">
           {{ formatRequests }} req
         </span>
-        <span class="rounded bg-gray-100 px-1.5 py-0.5 dark:bg-gray-800">
+        <span class="rounded bg-accent-100 px-1.5 py-0.5 dark:bg-accent-800">
           {{ formatTokens }}
         </span>
-        <span class="rounded bg-gray-100 px-1.5 py-0.5 dark:bg-gray-800" :title="t('usage.accountBilled')">
+        <span class="rounded bg-accent-100 px-1.5 py-0.5 dark:bg-accent-800" :title="t('usage.accountBilled')">
           A ${{ formatAccountCost }}
         </span>
         <span
           v-if="windowStats?.user_cost != null"
-          class="rounded bg-gray-100 px-1.5 py-0.5 dark:bg-gray-800"
+          class="rounded bg-accent-100 px-1.5 py-0.5 dark:bg-accent-800"
           :title="t('usage.userBilled')"
         >
           U ${{ formatUserCost }}
@@ -35,7 +35,7 @@
       </span>
 
       <!-- Progress bar container -->
-      <div class="h-1.5 w-8 shrink-0 overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700">
+      <div class="h-1.5 w-8 shrink-0 overflow-hidden rounded-full bg-accent-200 dark:bg-accent-700">
         <div
           :class="['h-full transition-all duration-300', barClass]"
           :style="{ width: barWidth }"
@@ -48,7 +48,7 @@
       </span>
 
       <!-- Reset time -->
-      <span v-if="shouldShowResetTime" class="shrink-0 text-[10px] text-gray-400">
+      <span v-if="shouldShowResetTime" class="shrink-0 text-[10px] text-accent-400">
         {{ formatResetTime }}
       </span>
     </div>
@@ -66,7 +66,7 @@ const props = defineProps<{
   label: string
   utilization: number // Percentage (0-100+)
   resetsAt?: string | null
-  color: 'indigo' | 'emerald' | 'purple' | 'amber'
+  color: 'primary' | 'emerald' | 'accent' | 'amber'
   windowStats?: WindowStats | null
   showNowWhenIdle?: boolean
 }>()
@@ -99,9 +99,9 @@ watch(
 // Label background colors
 const labelClass = computed(() => {
   const colors = {
-    indigo: 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300',
+    primary: 'bg-accent-100 text-accent-700 dark:bg-accent-900/40 dark:text-accent-300',
     emerald: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300',
-    purple: 'bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300',
+    accent: 'bg-accent-100 text-accent-700 dark:bg-accent-900/40 dark:text-accent-300',
     amber: 'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300'
   }
   return colors[props.color]
@@ -125,7 +125,7 @@ const textClass = computed(() => {
   } else if (props.utilization >= 80) {
     return 'text-amber-600 dark:text-amber-400'
   } else {
-    return 'text-gray-600 dark:text-gray-400'
+    return 'text-accent-600 dark:text-accent-400'
   }
 })
 

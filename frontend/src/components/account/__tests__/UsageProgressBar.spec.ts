@@ -29,7 +29,7 @@ describe('UsageProgressBar', () => {
         utilization: 0,
         resetsAt: '2026-03-17T02:30:00Z',
         showNowWhenIdle: true,
-        color: 'indigo'
+        color: 'primary'
       }
     })
 
@@ -60,7 +60,7 @@ describe('UsageProgressBar', () => {
         utilization: 0,
         resetsAt: '2026-03-17T02:30:00Z',
         showNowWhenIdle: false,
-        color: 'indigo'
+        color: 'primary'
       }
     })
 
@@ -75,7 +75,7 @@ describe('UsageProgressBar', () => {
         utilization: 53,
         // 早于 fake system time 2026-03-17T00:00:00Z
         resetsAt: '2026-03-16T22:00:00Z',
-        color: 'indigo'
+        color: 'primary'
       }
     })
 
@@ -89,7 +89,7 @@ describe('UsageProgressBar', () => {
         label: '5h',
         utilization: 0,
         resetsAt: '2026-03-16T22:00:00Z',
-        color: 'indigo'
+        color: 'primary'
       }
     })
 

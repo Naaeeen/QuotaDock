@@ -7,51 +7,51 @@
 
     <!-- Table Container -->
     <div v-else class="flex min-h-0 flex-1 flex-col">
-      <div class="min-h-0 flex-1 overflow-auto border-b border-gray-200 dark:border-dark-700">
+      <div class="min-h-0 flex-1 overflow-auto border-b border-accent-200 dark:border-dark-700">
         <table class="w-full border-separate border-spacing-0">
-          <thead class="sticky top-0 z-10 bg-gray-50 dark:bg-dark-800">
+          <thead class="sticky top-0 z-10 bg-accent-50 dark:bg-dark-800">
             <tr>
-              <th class="border-b border-gray-200 px-4 py-2.5 text-left text-[11px] font-bold uppercase tracking-wider text-gray-500 dark:border-dark-700 dark:text-dark-400">
+              <th class="border-b border-accent-200 px-4 py-2.5 text-left text-[11px] font-bold uppercase tracking-wider text-accent-500 dark:border-dark-700 dark:text-dark-400">
                 {{ t('admin.ops.errorLog.time') }}
               </th>
-              <th class="border-b border-gray-200 px-4 py-2.5 text-left text-[11px] font-bold uppercase tracking-wider text-gray-500 dark:border-dark-700 dark:text-dark-400">
+              <th class="border-b border-accent-200 px-4 py-2.5 text-left text-[11px] font-bold uppercase tracking-wider text-accent-500 dark:border-dark-700 dark:text-dark-400">
                 {{ t('admin.ops.errorLog.type') }}
               </th>
-              <th class="border-b border-gray-200 px-4 py-2.5 text-left text-[11px] font-bold uppercase tracking-wider text-gray-500 dark:border-dark-700 dark:text-dark-400">
+              <th class="border-b border-accent-200 px-4 py-2.5 text-left text-[11px] font-bold uppercase tracking-wider text-accent-500 dark:border-dark-700 dark:text-dark-400">
                 {{ t('admin.ops.errorLog.endpoint') }}
               </th>
-              <th class="border-b border-gray-200 px-4 py-2.5 text-left text-[11px] font-bold uppercase tracking-wider text-gray-500 dark:border-dark-700 dark:text-dark-400">
+              <th class="border-b border-accent-200 px-4 py-2.5 text-left text-[11px] font-bold uppercase tracking-wider text-accent-500 dark:border-dark-700 dark:text-dark-400">
                 {{ t('admin.ops.errorLog.platform') }}
               </th>
-              <th class="border-b border-gray-200 px-4 py-2.5 text-left text-[11px] font-bold uppercase tracking-wider text-gray-500 dark:border-dark-700 dark:text-dark-400">
+              <th class="border-b border-accent-200 px-4 py-2.5 text-left text-[11px] font-bold uppercase tracking-wider text-accent-500 dark:border-dark-700 dark:text-dark-400">
                 {{ t('admin.ops.errorLog.model') }}
               </th>
-              <th class="border-b border-gray-200 px-4 py-2.5 text-left text-[11px] font-bold uppercase tracking-wider text-gray-500 dark:border-dark-700 dark:text-dark-400">
+              <th class="border-b border-accent-200 px-4 py-2.5 text-left text-[11px] font-bold uppercase tracking-wider text-accent-500 dark:border-dark-700 dark:text-dark-400">
                 {{ t('admin.ops.errorLog.group') }}
               </th>
-              <th class="border-b border-gray-200 px-4 py-2.5 text-left text-[11px] font-bold uppercase tracking-wider text-gray-500 dark:border-dark-700 dark:text-dark-400">
+              <th class="border-b border-accent-200 px-4 py-2.5 text-left text-[11px] font-bold uppercase tracking-wider text-accent-500 dark:border-dark-700 dark:text-dark-400">
                 {{ t('admin.ops.errorLog.user') }}
               </th>
-              <th class="border-b border-gray-200 px-4 py-2.5 text-left text-[11px] font-bold uppercase tracking-wider text-gray-500 dark:border-dark-700 dark:text-dark-400">
+              <th class="border-b border-accent-200 px-4 py-2.5 text-left text-[11px] font-bold uppercase tracking-wider text-accent-500 dark:border-dark-700 dark:text-dark-400">
                 {{ t('admin.ops.errorLog.apiKey') }}
               </th>
-              <th class="border-b border-gray-200 px-4 py-2.5 text-left text-[11px] font-bold uppercase tracking-wider text-gray-500 dark:border-dark-700 dark:text-dark-400">
+              <th class="border-b border-accent-200 px-4 py-2.5 text-left text-[11px] font-bold uppercase tracking-wider text-accent-500 dark:border-dark-700 dark:text-dark-400">
                 {{ t('admin.ops.errorLog.account') }}
               </th>
-              <th class="border-b border-gray-200 px-4 py-2.5 text-left text-[11px] font-bold uppercase tracking-wider text-gray-500 dark:border-dark-700 dark:text-dark-400">
+              <th class="border-b border-accent-200 px-4 py-2.5 text-left text-[11px] font-bold uppercase tracking-wider text-accent-500 dark:border-dark-700 dark:text-dark-400">
                 {{ t('admin.ops.errorLog.status') }}
               </th>
-              <th class="border-b border-gray-200 px-4 py-2.5 text-left text-[11px] font-bold uppercase tracking-wider text-gray-500 dark:border-dark-700 dark:text-dark-400">
+              <th class="border-b border-accent-200 px-4 py-2.5 text-left text-[11px] font-bold uppercase tracking-wider text-accent-500 dark:border-dark-700 dark:text-dark-400">
                 {{ t('admin.ops.errorLog.message') }}
               </th>
-              <th class="border-b border-gray-200 px-4 py-2.5 text-right text-[11px] font-bold uppercase tracking-wider text-gray-500 dark:border-dark-700 dark:text-dark-400">
+              <th class="border-b border-accent-200 px-4 py-2.5 text-right text-[11px] font-bold uppercase tracking-wider text-accent-500 dark:border-dark-700 dark:text-dark-400">
                 {{ t('admin.ops.errorLog.action') }}
               </th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-gray-100 dark:divide-dark-700">
+          <tbody class="divide-y divide-accent-100 dark:divide-dark-700">
             <tr v-if="rows.length === 0">
-              <td colspan="12" class="py-12 text-center text-sm text-gray-400 dark:text-dark-500">
+              <td colspan="12" class="py-12 text-center text-sm text-accent-400 dark:text-dark-500">
                 {{ t('admin.ops.errorLog.noErrors') }}
               </td>
             </tr>
@@ -59,13 +59,13 @@
             <tr
               v-for="log in rows"
               :key="log.id"
-              class="group cursor-pointer transition-colors hover:bg-gray-50/80 dark:hover:bg-dark-800/50"
+              class="group cursor-pointer transition-colors hover:bg-accent-50/80 dark:hover:bg-dark-800/50"
               @click="emit('openErrorDetail', log.id)"
             >
               <!-- Time -->
               <td class="whitespace-nowrap px-4 py-2">
                 <el-tooltip :content="log.request_id || log.client_request_id" placement="top" :show-after="500">
-                  <span class="font-mono text-xs font-medium text-gray-900 dark:text-gray-200">
+                  <span class="font-mono text-xs font-medium text-accent-900 dark:text-accent-200">
                     {{ formatDateTime(log.created_at).split(' ')[1] }}
                   </span>
                 </el-tooltip>
@@ -87,17 +87,17 @@
               <td class="px-4 py-2">
                 <div class="max-w-[160px]">
                   <el-tooltip v-if="log.inbound_endpoint" :content="formatEndpointTooltip(log)" placement="top" :show-after="500">
-                    <span class="truncate font-mono text-[11px] text-gray-700 dark:text-gray-300">
+                    <span class="truncate font-mono text-[11px] text-accent-700 dark:text-accent-300">
                       {{ log.inbound_endpoint }}
                     </span>
                   </el-tooltip>
-                  <span v-else class="text-xs text-gray-400">-</span>
+                  <span v-else class="text-xs text-accent-400">-</span>
                 </div>
               </td>
 
               <!-- Platform -->
               <td class="whitespace-nowrap px-4 py-2">
-                <span class="inline-flex items-center rounded bg-gray-100 px-1.5 py-0.5 text-[10px] font-bold uppercase text-gray-600 dark:bg-dark-700 dark:text-gray-300">
+                <span class="inline-flex items-center rounded bg-accent-100 px-1.5 py-0.5 text-[10px] font-bold uppercase text-accent-600 dark:bg-dark-700 dark:text-accent-300">
                   {{ log.platform || '-' }}
                 </span>
               </td>
@@ -107,18 +107,18 @@
                 <div class="max-w-[160px]">
                   <template v-if="hasModelMapping(log)">
                     <el-tooltip :content="modelMappingTooltip(log)" placement="top" :show-after="500">
-                      <span class="flex items-center gap-1 truncate font-mono text-[11px] text-gray-700 dark:text-gray-300">
+                      <span class="flex items-center gap-1 truncate font-mono text-[11px] text-accent-700 dark:text-accent-300">
                         <span class="truncate">{{ log.requested_model }}</span>
-                        <span class="flex-shrink-0 text-gray-400">→</span>
+                        <span class="flex-shrink-0 text-accent-400">→</span>
                         <span class="truncate text-primary-600 dark:text-primary-400">{{ log.upstream_model }}</span>
                       </span>
                     </el-tooltip>
                   </template>
                   <template v-else>
-                    <span v-if="displayModel(log)" class="truncate font-mono text-[11px] text-gray-700 dark:text-gray-300" :title="displayModel(log)">
+                    <span v-if="displayModel(log)" class="truncate font-mono text-[11px] text-accent-700 dark:text-accent-300" :title="displayModel(log)">
                       {{ displayModel(log) }}
                     </span>
-                    <span v-else class="text-xs text-gray-400">-</span>
+                    <span v-else class="text-xs text-accent-400">-</span>
                   </template>
                 </div>
               </td>
@@ -126,27 +126,27 @@
               <!-- Group -->
               <td class="px-4 py-2">
                  <el-tooltip v-if="log.group_id" :content="t('admin.ops.errorLog.id') + ' ' + log.group_id" placement="top" :show-after="500">
-                  <span class="max-w-[100px] truncate text-xs font-medium text-gray-900 dark:text-gray-200">
+                  <span class="max-w-[100px] truncate text-xs font-medium text-accent-900 dark:text-accent-200">
                     {{ log.group_name || '-' }}
                   </span>
                 </el-tooltip>
-                <span v-else class="text-xs text-gray-400">-</span>
+                <span v-else class="text-xs text-accent-400">-</span>
               </td>
 
               <!-- User -->
               <td class="px-4 py-2">
                 <el-tooltip v-if="log.user_id" :content="t('admin.ops.errorLog.userId') + ' ' + log.user_id" placement="top" :show-after="500">
-                  <span class="block max-w-[140px] truncate text-xs font-medium text-gray-900 dark:text-gray-200">
+                  <span class="block max-w-[140px] truncate text-xs font-medium text-accent-900 dark:text-accent-200">
                     {{ log.user_email || '-' }}
                   </span>
                 </el-tooltip>
-                <span v-else class="text-xs text-gray-400">-</span>
+                <span v-else class="text-xs text-accent-400">-</span>
               </td>
 
               <!-- API Key -->
               <td class="px-4 py-2">
                 <div v-if="log.api_key_id || log.api_key_name" class="flex max-w-[140px] items-center gap-1">
-                  <span class="truncate text-xs font-medium text-gray-900 dark:text-gray-200" :title="log.api_key_name || ('#' + log.api_key_id)">
+                  <span class="truncate text-xs font-medium text-accent-900 dark:text-accent-200" :title="log.api_key_name || ('#' + log.api_key_id)">
                     {{ log.api_key_name || ('#' + log.api_key_id) }}
                   </span>
                   <span
@@ -156,17 +156,17 @@
                     {{ t('admin.ops.errorLog.keyDeletedBadge') }}
                   </span>
                 </div>
-                <span v-else class="text-xs text-gray-400">-</span>
+                <span v-else class="text-xs text-accent-400">-</span>
               </td>
 
               <!-- Account -->
               <td class="px-4 py-2">
                 <el-tooltip v-if="log.account_id" :content="t('admin.ops.errorLog.accountId') + ' ' + log.account_id" placement="top" :show-after="500">
-                  <span class="block max-w-[120px] truncate text-xs font-medium text-gray-900 dark:text-gray-200">
+                  <span class="block max-w-[120px] truncate text-xs font-medium text-accent-900 dark:text-accent-200">
                     {{ log.account_name || '-' }}
                   </span>
                 </el-tooltip>
-                <span v-else class="text-xs text-gray-400">-</span>
+                <span v-else class="text-xs text-accent-400">-</span>
               </td>
 
               <!-- Status -->
@@ -188,7 +188,7 @@
                   </span>
                   <span
                     v-if="log.request_type != null && log.request_type > 0"
-                    class="rounded bg-gray-100 px-1.5 py-0.5 text-[10px] font-bold text-gray-600 dark:bg-dark-700 dark:text-gray-300"
+                    class="rounded bg-accent-100 px-1.5 py-0.5 text-[10px] font-bold text-accent-600 dark:bg-dark-700 dark:text-accent-300"
                   >
                     {{ formatRequestType(log.request_type) }}
                   </span>
@@ -198,7 +198,7 @@
               <!-- Message (Response Content) -->
               <td class="px-4 py-2">
                 <div class="max-w-[200px]">
-                  <p class="truncate text-[11px] font-medium text-gray-600 dark:text-gray-400" :title="log.message">
+                  <p class="truncate text-[11px] font-medium text-accent-600 dark:text-accent-400" :title="log.message">
                     {{ formatSmartMessage(log.message) || '-' }}
                   </p>
                 </div>
@@ -218,7 +218,7 @@
       </div>
 
       <!-- Pagination -->
-      <div class="bg-gray-50/50 dark:bg-dark-800/50">
+      <div class="bg-accent-50/50 dark:bg-dark-800/50">
         <Pagination
           v-if="total > 0"
           :total="total"
@@ -295,17 +295,17 @@ function getTypeBadge(log: OpsErrorLog): { label: string; className: string } {
     return { label: t('admin.ops.errorLog.typeRequest'), className: 'bg-amber-50 text-amber-700 ring-amber-600/20 dark:bg-amber-900/30 dark:text-amber-400 dark:ring-amber-500/30' }
   }
   if (phase === 'auth' && owner === 'client') {
-    return { label: t('admin.ops.errorLog.typeAuth'), className: 'bg-blue-50 text-blue-700 ring-blue-600/20 dark:bg-blue-900/30 dark:text-blue-400 dark:ring-blue-500/30' }
+    return { label: t('admin.ops.errorLog.typeAuth'), className: 'bg-primary-50 text-primary-700 ring-primary-600/20 dark:bg-primary-900/30 dark:text-primary-400 dark:ring-primary-500/30' }
   }
   if (phase === 'routing' && owner === 'platform') {
-    return { label: t('admin.ops.errorLog.typeRouting'), className: 'bg-purple-50 text-purple-700 ring-purple-600/20 dark:bg-purple-900/30 dark:text-purple-400 dark:ring-purple-500/30' }
+    return { label: t('admin.ops.errorLog.typeRouting'), className: 'bg-accent-50 text-accent-700 ring-accent-600/20 dark:bg-accent-900/30 dark:text-accent-400 dark:ring-accent-500/30' }
   }
   if (phase === 'internal' && owner === 'platform') {
-    return { label: t('admin.ops.errorLog.typeInternal'), className: 'bg-gray-100 text-gray-800 ring-gray-600/20 dark:bg-dark-700 dark:text-gray-200 dark:ring-dark-500/40' }
+    return { label: t('admin.ops.errorLog.typeInternal'), className: 'bg-accent-100 text-accent-800 ring-accent-600/20 dark:bg-dark-700 dark:text-accent-200 dark:ring-dark-500/40' }
   }
 
     const fallback = phase || owner || t('common.unknown')
-    return { label: fallback, className: 'bg-gray-50 text-gray-700 ring-gray-600/10 dark:bg-dark-900 dark:text-gray-300 dark:ring-dark-700' }
+    return { label: fallback, className: 'bg-accent-50 text-accent-700 ring-accent-600/10 dark:bg-dark-900 dark:text-accent-300 dark:ring-dark-700' }
 }
 
 interface Props {
@@ -327,9 +327,9 @@ const emit = defineEmits<Emits>()
 
 function getStatusClass(code: number): string {
   if (code >= 500) return 'bg-red-50 text-red-700 ring-red-600/20 dark:bg-red-900/30 dark:text-red-400 dark:ring-red-500/30'
-  if (code === 429) return 'bg-purple-50 text-purple-700 ring-purple-600/20 dark:bg-purple-900/30 dark:text-purple-400 dark:ring-purple-500/30'
+  if (code === 429) return 'bg-accent-50 text-accent-700 ring-accent-600/20 dark:bg-accent-900/30 dark:text-accent-400 dark:ring-accent-500/30'
   if (code >= 400) return 'bg-amber-50 text-amber-700 ring-amber-600/20 dark:bg-amber-900/30 dark:text-amber-400 dark:ring-amber-500/30'
-  return 'bg-gray-50 text-gray-700 ring-gray-600/20 dark:bg-gray-900/30 dark:text-gray-400 dark:ring-gray-500/30'
+  return 'bg-accent-50 text-accent-700 ring-accent-600/20 dark:bg-accent-900/30 dark:text-accent-400 dark:ring-accent-500/30'
 }
 
 function formatSmartMessage(msg: string): string {

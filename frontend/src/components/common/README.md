@@ -206,7 +206,7 @@ Simple animated loading spinner.
 **Props:**
 
 - `size?: 'sm' | 'md' | 'lg' | 'xl'` - Spinner size (default: 'md')
-- `color?: 'primary' | 'secondary' | 'white' | 'gray'` - Spinner color (default: 'primary')
+- `color?: 'primary' | 'secondary' | 'white' | 'neutral'` - Spinner color (default: 'primary')
 
 **Usage:**
 
