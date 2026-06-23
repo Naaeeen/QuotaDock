@@ -15,7 +15,7 @@ import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
 type SpinnerSize = 'sm' | 'md' | 'lg' | 'xl'
-type SpinnerColor = 'primary' | 'secondary' | 'white' | 'gray'
+type SpinnerColor = 'primary' | 'secondary' | 'white' | 'neutral'
 
 interface Props {
   size?: SpinnerSize
@@ -40,9 +40,9 @@ const sizeClasses = computed(() => {
 const colorClass = computed(() => {
   const colors: Record<SpinnerColor, string> = {
     primary: 'text-primary-500',
-    secondary: 'text-gray-500 dark:text-dark-400',
+    secondary: 'text-accent-500 dark:text-dark-400',
     white: 'text-white',
-    gray: 'text-gray-400 dark:text-dark-500'
+    neutral: 'text-accent-400 dark:text-dark-500'
   }
   return colors[props.color]
 })

@@ -47,7 +47,7 @@
       </span>
     </div>
     <!-- Row 3: Subscription expiration (non-free paid accounts only) -->
-    <div v-if="expiresLabel" class="text-[10px] leading-tight text-gray-400 dark:text-gray-500 pl-0.5" :title="subscriptionExpiresAt">
+    <div v-if="expiresLabel" class="text-[10px] leading-tight text-accent-400 dark:text-accent-500 pl-0.5" :title="subscriptionExpiresAt">
       {{ expiresLabel }}
     </div>
   </div>
@@ -124,9 +124,9 @@ const platformClass = computed(() => {
     return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400'
   }
   if (props.platform === 'antigravity') {
-    return 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400'
+    return 'bg-accent-100 text-accent-700 dark:bg-accent-900/30 dark:text-accent-400'
   }
-  return 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400'
+  return 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400'
 })
 
 const typeClass = computed(() => {
@@ -137,9 +137,9 @@ const typeClass = computed(() => {
     return 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400'
   }
   if (props.platform === 'antigravity') {
-    return 'bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400'
+    return 'bg-accent-100 text-accent-600 dark:bg-accent-900/30 dark:text-accent-400'
   }
-  return 'bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400'
+  return 'bg-primary-100 text-primary-600 dark:bg-primary-900/30 dark:text-primary-400'
 })
 
 const planBadgeClass = computed(() => {

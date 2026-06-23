@@ -1,6 +1,6 @@
 <template>
   <div class="card p-4">
-    <h3 class="mb-4 text-sm font-semibold text-gray-900 dark:text-white">
+    <h3 class="mb-4 text-sm font-semibold text-accent-900 dark:text-white">
       {{ t('payment.admin.dailyRevenue') }}
     </h3>
     <div class="h-64">
@@ -10,7 +10,7 @@
       <Line v-else-if="chartData" :data="chartData" :options="chartOptions" />
       <div
         v-else
-        class="flex h-full items-center justify-center text-sm text-gray-500 dark:text-gray-400"
+        class="flex h-full items-center justify-center text-sm text-accent-500 dark:text-accent-400"
       >
         {{ t('payment.admin.noData') }}
       </div>
@@ -51,8 +51,8 @@ const chartData = computed(() => {
       {
         label: t('payment.admin.revenue'),
         data: props.data.map(d => d.amount),
-        borderColor: 'rgb(59, 130, 246)',
-        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+        borderColor: 'rgb(150, 97, 29)',
+        backgroundColor: 'rgba(150, 97, 29, 0.12)',
         fill: true,
         tension: 0.3,
         pointRadius: 3,

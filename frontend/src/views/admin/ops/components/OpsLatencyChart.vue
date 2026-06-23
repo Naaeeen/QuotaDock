@@ -20,9 +20,9 @@ const { t } = useI18n()
 
 const isDarkMode = computed(() => document.documentElement.classList.contains('dark'))
 const colors = computed(() => ({
-  blue: '#3b82f6',
-  grid: isDarkMode.value ? '#374151' : '#f3f4f6',
-  text: isDarkMode.value ? '#9ca3af' : '#6b7280'
+  primary: '#96611d',
+  grid: isDarkMode.value ? '#523a2b' : '#faf7f2',
+  text: isDarkMode.value ? '#c5a989' : '#8a6748'
 }))
 
 const hasData = computed(() => (props.latencyData?.total_requests ?? 0) > 0)
@@ -42,7 +42,7 @@ const chartData = computed(() => {
       {
         label: t('admin.ops.requests'),
         data: props.latencyData.buckets.map((b) => b.count),
-        backgroundColor: c.blue,
+        backgroundColor: c.primary,
         borderRadius: 4,
         barPercentage: 0.6
       }
@@ -74,10 +74,10 @@ const options = computed(() => {
 </script>
 
 <template>
-  <div class="flex h-full flex-col rounded-3xl bg-white p-6 shadow-sm ring-1 ring-gray-900/5 dark:bg-dark-800 dark:ring-dark-700">
+  <div class="flex h-full flex-col rounded-3xl bg-white p-6 shadow-sm ring-1 ring-accent-900/5 dark:bg-dark-800 dark:ring-dark-700">
     <div class="mb-4 flex items-center justify-between">
-      <h3 class="flex items-center gap-2 text-sm font-bold text-gray-900 dark:text-white">
-        <svg class="h-4 w-4 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <h3 class="flex items-center gap-2 text-sm font-bold text-accent-900 dark:text-white">
+        <svg class="h-4 w-4 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -93,7 +93,7 @@ const options = computed(() => {
     <div class="min-h-0 flex-1">
       <Bar v-if="state === 'ready' && chartData" :data="chartData" :options="options" />
       <div v-else class="flex h-full items-center justify-center">
-        <div v-if="state === 'loading'" class="animate-pulse text-sm text-gray-400">{{ t('common.loading') }}</div>
+        <div v-if="state === 'loading'" class="animate-pulse text-sm text-accent-400">{{ t('common.loading') }}</div>
         <EmptyState v-else :title="t('common.noData')" :description="t('admin.ops.charts.emptyRequest')" />
       </div>
     </div>

@@ -1,6 +1,6 @@
 # Authentication Views Usage Examples
 
-This document provides practical examples of how to use the authentication views in the Sub2API frontend.
+This document provides practical examples of how to use the authentication views in the QuotaDock frontend.
 
 ## Quick Start
 
@@ -61,7 +61,7 @@ This document provides practical examples of how to use the authentication views
 // - On success:
 //   - Token stored in localStorage
 //   - User data stored in state
-//   - Success toast: "Account created successfully! Welcome to Sub2API."
+//   - Success toast: "Account created successfully! Welcome to QuotaDock."
 //   - Redirect to /dashboard
 // - On error:
 //   - Error message displayed inline
@@ -486,7 +486,7 @@ async function handleRegister(): Promise<void> {
 
 ```html
 <!-- Proper labels for screen readers -->
-<label for="username" class="mb-1 block text-sm font-medium text-gray-700"> Username </label>
+<label for="username" class="mb-1 block text-sm font-medium text-accent-700"> Username </label>
 <input
   id="username"
   type="text"

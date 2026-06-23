@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 128" role="img" aria-label="QuotaDock lockup on dark">
+
+  <defs>
+    <style><![CDATA[
+      .latin {
+        font-family: Inter, Geist, "Segoe UI", Arial, sans-serif;
+        font-weight: 730;
+        letter-spacing: -1.1px;
+      }
+      .latin-tight {
+        font-family: Inter, Geist, "Segoe UI", Arial, sans-serif;
+        font-weight: 760;
+        letter-spacing: -1.6px;
+      }
+      .latin-small {
+        font-family: Inter, Geist, "Segoe UI", Arial, sans-serif;
+        font-weight: 520;
+      }
+      .cjk {
+        font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "Heiti SC", "Segoe UI", Arial, sans-serif;
+        font-weight: 760;
+        letter-spacing: -0.5px;
+      }
+      .cjk-small {
+        font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "Heiti SC", Arial, sans-serif;
+        font-weight: 520;
+        letter-spacing: 0.4px;
+      }
+      .caption {
+        font-family: Inter, Geist, "Segoe UI", Arial, sans-serif;
+        font-weight: 520;
+        letter-spacing: 0.2px;
+      }
+      .mono-caption {
+        font-family: Inter, Geist, "Segoe UI", Arial, sans-serif;
+        font-weight: 560;
+        letter-spacing: 1.2px;
+      }
+    ]]></style>
+  </defs>
+
+  <g transform="translate(16 16) scale(1.5)"><path fill="#C79A54" fill-rule="evenodd" clip-rule="evenodd" d="M14 10h19c12.7 0 21 8.7 21 22s-8.3 22-21 22H14V10Z M25 22h8.5C40.2 22 45 26.1 45 32s-4.8 10-11.5 10H25V22Z M34 28.5h17v7H34v-7Z"/></g>
+  <text class="latin-tight" x="130" y="82" font-size="58" fill="#F2EDE6">QuotaDock</text>
+
+</svg>

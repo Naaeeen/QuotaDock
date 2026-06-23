@@ -8,14 +8,14 @@
   >
     <!-- Logo/Brand -->
     <div class="sidebar-header" :class="{ 'sidebar-header-collapsed': sidebarCollapsed }">
-      <!-- Custom Logo or Default Logo -->
-      <div class="sidebar-logo flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl shadow-glow">
-        <img v-if="settingsLoaded" :src="siteLogo || '/logo.png'" alt="Logo" class="h-full w-full object-contain" />
+      <div class="sidebar-logo" :class="{ 'sidebar-logo-collapsed': sidebarCollapsed }">
+        <BrandLogo
+          v-if="settingsLoaded"
+          :variant="sidebarCollapsed ? 'icon' : 'compact'"
+          class="h-full w-full object-contain object-left"
+        />
       </div>
       <div class="sidebar-brand" :class="{ 'sidebar-brand-collapsed': sidebarCollapsed }" :aria-hidden="sidebarCollapsed ? 'true' : 'false'">
-        <span class="sidebar-brand-title text-lg font-bold text-gray-900 dark:text-white">
-          {{ siteName }}
-        </span>
         <!-- Version Badge -->
         <VersionBadge :version="siteVersion" />
       </div>
@@ -54,7 +54,7 @@
                 </span>
               </button>
               <!-- Children -->
-              <div v-if="!sidebarCollapsed && isGroupExpanded(item)" class="mb-1 ml-4 border-l border-gray-200 pl-2 dark:border-dark-600">
+              <div v-if="!sidebarCollapsed && isGroupExpanded(item)" class="mb-1 ml-4 border-l border-accent-200 pl-2 dark:border-dark-600">
                 <router-link
                   v-for="child in item.children"
                   :key="child.path"
@@ -140,7 +140,7 @@
     </nav>
 
     <!-- Bottom Section -->
-    <div class="mt-auto border-t border-gray-100 p-3 dark:border-dark-800">
+    <div class="mt-auto border-t border-accent-100 p-3 dark:border-dark-800">
       <!-- Theme Toggle -->
       <button
         @click="toggleTheme"
@@ -184,9 +184,11 @@ import { computed, h, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { useAdminSettingsStore, useAppStore, useAuthStore, useOnboardingStore } from '@/stores'
+import BrandLogo from '@/components/common/BrandLogo.vue'
 import VersionBadge from '@/components/common/VersionBadge.vue'
 import { sanitizeSvg } from '@/utils/sanitize'
 import { FeatureFlags, makeSidebarFlag } from '@/utils/featureFlags'
+import { useThemeMode } from '@/composables/useThemeMode'
 
 interface NavItem {
   path: string
@@ -236,14 +238,11 @@ const adminSettingsStore = useAdminSettingsStore()
 const sidebarCollapsed = computed(() => appStore.sidebarCollapsed)
 const mobileOpen = computed(() => appStore.mobileOpen)
 const isAdmin = computed(() => authStore.isAdmin)
-const isDark = ref(document.documentElement.classList.contains('dark'))
+const { isDark, toggleThemeMode } = useThemeMode()
 
 // Track which parent nav groups are expanded
 const expandedGroups = ref<Set<string>>(new Set())
 
-// Site settings from appStore (cached, no flicker)
-const siteName = computed(() => appStore.siteName)
-const siteLogo = computed(() => appStore.siteLogo)
 const siteVersion = computed(() => appStore.siteVersion)
 const settingsLoaded = computed(() => appStore.publicSettingsLoaded)
 
@@ -792,9 +791,7 @@ function toggleSidebar() {
 }
 
 function toggleTheme() {
-  isDark.value = !isDark.value
-  document.documentElement.classList.toggle('dark', isDark.value)
-  localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
+  toggleThemeMode()
 }
 
 function closeMobile() {
@@ -864,16 +861,6 @@ function handleGroupClick(item: NavItem) {
   }
 }
 
-// Initialize theme
-const savedTheme = localStorage.getItem('theme')
-if (
-  savedTheme === 'dark' ||
-  (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)
-) {
-  isDark.value = true
-  document.documentElement.classList.add('dark')
-}
-
 // Fetch admin settings (for feature-gated nav items like Ops).
 watch(
   isAdmin,
@@ -894,8 +881,13 @@ onMounted(() => {
 
 <style scoped>
 .sidebar-logo {
-  flex: 0 0 2.25rem;
-  min-width: 2.25rem;
+  display: flex;
+  height: 2.5rem;
+  min-width: 0;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
 }
 
 .sidebar-header-collapsed {
@@ -904,9 +896,16 @@ onMounted(() => {
   padding-right: 1.125rem;
 }
 
+.sidebar-logo-collapsed {
+  height: 2.25rem;
+  width: 2.25rem;
+  flex: 0 0 2.25rem;
+  justify-content: center;
+}
+
 .sidebar-brand {
   min-width: 0;
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   white-space: nowrap;
   transition:
     max-width 0.22s ease,

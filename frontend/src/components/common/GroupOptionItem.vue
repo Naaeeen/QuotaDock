@@ -16,7 +16,7 @@
       <!-- Row 2: description with top spacing -->
       <span
         v-if="description"
-        class="mt-1.5 w-full text-left text-xs leading-relaxed text-gray-500 dark:text-gray-400 line-clamp-2"
+        class="mt-1.5 w-full text-left text-xs leading-relaxed text-accent-500 dark:text-accent-400 line-clamp-2"
       >
         {{ description }}
       </span>
@@ -90,9 +90,9 @@ const ratePillClass = computed(() => {
     case 'openai':
       return 'bg-green-50 text-green-700 dark:bg-green-900/20 dark:text-green-400'
     case 'gemini':
-      return 'bg-sky-50 text-sky-700 dark:bg-sky-900/20 dark:text-sky-400'
+      return 'bg-primary-50 text-primary-700 dark:bg-primary-900/20 dark:text-primary-400'
     default: // antigravity and others
-      return 'bg-violet-50 text-violet-700 dark:bg-violet-900/20 dark:text-violet-400'
+      return 'bg-accent-50 text-accent-700 dark:bg-accent-900/20 dark:text-accent-400'
   }
 })
 </script>

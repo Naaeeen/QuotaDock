@@ -11,7 +11,7 @@ Both LoginView and RegisterView use the AuthLayout component, which provides:
 │                                             │
 │  ┌─────────────────────────────────────┐   │
 │  │                                     │   │
-│  │         Sub2API Logo                │   │
+│  │         QuotaDock Logo                │   │
 │  │  "Subscription to API Conversion"   │   │
 │  │                                     │   │
 │  └─────────────────────────────────────┘   │
@@ -26,7 +26,7 @@ Both LoginView and RegisterView use the AuthLayout component, which provides:
 │                                             │
 └─────────────────────────────────────────────┘
 
-Background: Gradient (Indigo → White → Purple)
+Background: Gradient (Primary → White → Accent)
 Card: White with rounded corners and shadow
 Max Width: 28rem (448px)
 Centered: Both horizontally and vertically
@@ -39,7 +39,7 @@ Centered: Both horizontally and vertically
 ```
 ┌─────────────────────────────────────────────┐
 │                                             │
-│         🔷 Sub2API                          │
+│         🔷 QuotaDock                          │
 │    Subscription to API Conversion Platform  │
 │                                             │
 │  ┌─────────────────────────────────────┐   │
@@ -133,13 +133,13 @@ Centered: Both horizontally and vertically
 ```
 ┌─────────────────────────────────────────────┐
 │                                             │
-│         🔷 Sub2API                          │
+│         🔷 QuotaDock                          │
 │    Subscription to API Conversion Platform  │
 │                                             │
 │  ┌─────────────────────────────────────┐   │
 │  │                                     │   │
 │  │        Create Account               │   │
-│  │     Sign up to start using Sub2API  │   │
+│  │     Sign up to start using QuotaDock  │   │
 │  │                                     │   │
 │  │  Username                           │   │
 │  │  ┌────────────────────────────────┐ │   │
@@ -236,18 +236,18 @@ Centered: Both horizontally and vertically
 
 ### Primary Colors
 
-- **Indigo-600**: `#4F46E5` - Primary buttons, links, brand color
-- **Indigo-700**: `#4338CA` - Button hover state
-- **Indigo-500**: `#6366F1` - Focus ring
+- **Primary-600**: `#96611d` - Primary buttons, links, brand color
+- **Primary-700**: `#7a4817` - Button hover state
+- **Primary-500**: `#b88733` - Focus ring
 
 ### Neutral Colors
 
-- **Gray-900**: `#111827` - Headings
-- **Gray-700**: `#374151` - Labels
-- **Gray-600**: `#4B5563` - Body text
-- **Gray-500**: `#6B7280` - Helper text
-- **Gray-300**: `#D1D5DB` - Borders
-- **Gray-100**: `#F3F4F6` - Disabled backgrounds
+- **Accent-900**: `#17120f` - Headings
+- **Accent-700**: `#523a2b` - Labels
+- **Accent-600**: `#705039` - Body text
+- **Accent-500**: `#8a6748` - Helper text
+- **Accent-300**: `#c5a989` - Borders
+- **Accent-100**: `#faf7f2` - Disabled backgrounds
 - **White**: `#FFFFFF` - Card backgrounds
 
 ### Error Colors
@@ -264,9 +264,9 @@ Centered: Both horizontally and vertically
 
 ### Background Gradient
 
-- **From**: Indigo-100 (`#E0E7FF`)
+- **From**: Primary-100 (`#fff8e6`)
 - **Via**: White (`#FFFFFF`)
-- **To**: Purple-100 (`#F3E8FF`)
+- **To**: Accent-100 (`#f0e7d8`)
 
 ## Typography
 
@@ -314,8 +314,8 @@ Centered: Both horizontally and vertically
 **Default:**
 
 ```css
-border: 1px solid #D1D5DB (gray-300)
-focus: 2px ring #6366F1 (indigo-500)
+border: 1px solid #c5a989 (accent-300)
+focus: 2px ring #b88733 (primary-500)
 ```
 
 **Error:**
@@ -328,7 +328,7 @@ focus: 2px ring #EF4444 (red-500)
 **Disabled:**
 
 ```css
-background: #F3F4F6 (gray-100)
+background: #faf7f2 (accent-100)
 cursor: not-allowed
 opacity: 0.6
 ```
@@ -338,7 +338,7 @@ opacity: 0.6
 **Default:**
 
 ```css
-background: #4F46E5 (indigo-600)
+background: #96611d (primary-600)
 text: #FFFFFF (white)
 shadow: shadow-sm
 ```
@@ -346,7 +346,7 @@ shadow: shadow-sm
 **Hover:**
 
 ```css
-background: #4338CA (indigo-700)
+background: #7a4817 (primary-700)
 transition: colors 150ms
 ```
 
@@ -354,7 +354,7 @@ transition: colors 150ms
 
 ```css
 outline: none
-ring: 2px offset-2 #6366F1 (indigo-500)
+ring: 2px offset-2 #b88733 (primary-500)
 ```
 
 **Disabled:**
@@ -377,14 +377,14 @@ cursor: not-allowed
 **Default:**
 
 ```css
-color: #4F46E5 (indigo-600)
+color: #96611d (primary-600)
 font-weight: 500 (medium)
 ```
 
 **Hover:**
 
 ```css
-color: #6366F1 (indigo-500)
+color: #b88733 (primary-500)
 transition: colors 150ms
 ```
 
@@ -543,9 +543,9 @@ animation: spin 1s linear infinite;
 
 ```css
 /* Example dark mode colors (not implemented yet) */
-dark:bg-gray-900
+dark:bg-accent-900
 dark:text-white
-dark:border-gray-700
+dark:border-accent-700
 ```
 
 ## Performance Metrics

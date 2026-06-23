@@ -6,6 +6,7 @@ import NavigationProgress from '@/components/common/NavigationProgress.vue'
 import AdminComplianceDialog from '@/components/admin/AdminComplianceDialog.vue'
 import { resolveRouteDocumentTitle } from '@/router/title'
 import AnnouncementPopup from '@/components/common/AnnouncementPopup.vue'
+import { useBranding } from '@/composables/useBranding'
 import { useAppStore, useAuthStore, useSubscriptionStore, useAnnouncementStore, useAdminComplianceStore, useAdminSettingsStore } from '@/stores'
 import { getSetupStatus } from '@/api/setup'
 
@@ -17,6 +18,7 @@ const subscriptionStore = useSubscriptionStore()
 const announcementStore = useAnnouncementStore()
 const adminComplianceStore = useAdminComplianceStore()
 const adminSettingsStore = useAdminSettingsStore()
+const { faviconSrc } = useBranding({ variant: 'icon', preferCustom: false })
 
 function updateDocumentTitle() {
   const customMenuItems = [
@@ -38,18 +40,19 @@ function updateFavicon(logoUrl: string) {
     link.rel = 'icon'
     document.head.appendChild(link)
   }
-  link.type = logoUrl.endsWith('.svg') ? 'image/svg+xml' : 'image/x-icon'
+  const normalizedLogoUrl = logoUrl.toLowerCase()
+  link.type = normalizedLogoUrl.endsWith('.svg')
+    ? 'image/svg+xml'
+    : normalizedLogoUrl.endsWith('.png')
+      ? 'image/png'
+      : 'image/x-icon'
   link.href = logoUrl
 }
 
 // Watch for site settings changes and update favicon/title
 watch(
-  () => appStore.siteLogo,
-  (newLogo) => {
-    if (newLogo) {
-      updateFavicon(newLogo)
-    }
-  },
+  faviconSrc,
+  updateFavicon,
   { immediate: true }
 )
 

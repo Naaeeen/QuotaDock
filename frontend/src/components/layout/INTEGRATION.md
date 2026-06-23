@@ -185,7 +185,7 @@ app.mount('#app')
 <template>
   <AppLayout>
     <div class="space-y-6">
-      <h1 class="text-3xl font-bold text-gray-900">Dashboard</h1>
+      <h1 class="text-3xl font-bold text-accent-900">Dashboard</h1>
 
       <!-- Your content here -->
     </div>
@@ -205,14 +205,14 @@ import { AppLayout } from '@/components/layout'
 <!-- src/views/auth/LoginView.vue -->
 <template>
   <AuthLayout>
-    <h2 class="mb-6 text-2xl font-bold text-gray-900">Login</h2>
+    <h2 class="mb-6 text-2xl font-bold text-accent-900">Login</h2>
 
     <!-- Your login form here -->
 
     <template #footer>
-      <p class="text-gray-600">
+      <p class="text-accent-600">
         Don't have an account?
-        <router-link to="/register" class="text-indigo-600 hover:underline"> Sign up </router-link>
+        <router-link to="/register" class="text-primary-600 hover:underline"> Sign up </router-link>
       </p>
     </template>
   </AuthLayout>
@@ -231,12 +231,12 @@ import { AuthLayout } from '@/components/layout'
 
 ### Changing Colors
 
-The components use Tailwind's indigo color scheme by default. To change:
+The components use Tailwind's primary color scheme by default. To change:
 
 ```vue
-<!-- Change all instances of indigo-* to your preferred color -->
-<div class="bg-blue-600">   <!-- Instead of bg-indigo-600 -->
-<div class="text-blue-600">  <!-- Instead of text-indigo-600 -->
+<!-- Change all instances of primary-* to your preferred color -->
+<div class="bg-primary-600">   <!-- Instead of bg-primary-600 -->
+<div class="text-primary-600">  <!-- Instead of text-primary-600 -->
 ```
 
 ### Adding Custom Icons
@@ -273,7 +273,7 @@ Modify user dropdown in `AppHeader.vue`:
 <router-link
   to="/settings"
   @click="closeDropdown"
-  class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+  class="flex items-center px-4 py-2 text-sm text-accent-700 hover:bg-accent-100"
 >
   <span class="mr-2">&#9881;</span>
   Settings
